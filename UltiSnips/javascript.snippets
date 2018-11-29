@@ -1,0 +1,93 @@
+snippet stateless "React stateless component" 
+import React from "react";
+
+const ${1: Component} = props => {
+	return (
+		<h1>Yo this works</h1>
+	);
+};
+
+export default $1;
+endsnippet
+
+snippet stateful "React stateful component"
+import React, { Component } from "react";
+
+class ${1:componentName} extends Component {
+	render() {
+		return (
+			<h1>Yo yo you, I have state</h1>
+		);
+	};
+};
+
+export default $1;
+endsnippet
+
+snippet enzyme "Sample enzyme test setup"
+import React from "react";
+import { shallow } from "enzyme";
+import ${1:componentName} from "./index";
+
+describe("<$1 />", () => {
+  let component, createElement;
+
+  beforeEach(() => {
+    createElement = jest.fn();
+
+    component = shallow(
+      <$1 checklist={checklist} completionEdit={false} />
+    );
+  });
+
+  describe("the blank function", () => {
+    it("should do something", () => {
+      expect(
+        component.instance().blank()
+      ).toEqual(true);
+    });
+  });
+});
+endsnippet
+
+snippet it "an it block for enzyme"
+it("${1:description{}}", () => {
+	
+})
+endsnippet
+
+snippet log "console.log"
+console.log(${1:text})
+endsnippet
+
+snippet func "prop types function"
+PropTypes.func.isRequired,
+endsnippet
+
+snippet obj "prop types object"
+PropTypes.object.isRequired,
+endsnippet
+
+snippet bool "prop types boolean"
+PropTypes.bool.isRequired,
+endsnippet
+
+snippet arr "prop types array"
+PropTypes.array.isRequired,
+endsnippet
+
+snippet num "prop types number"
+PropTypes.number.isRequired,
+endsnippet
+
+snippet str "prop types string"
+PropTypes.string.isRequired,
+endsnippet
+
+snippet styled "styled components import"
+import styled from "styled-components";
+endsnippet
+
+snippet connect "connect import"
+import { connect } from "react-redux";
+endsnippet
